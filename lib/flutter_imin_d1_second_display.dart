@@ -6,27 +6,27 @@ export 'helpers/widget_to_image_helper.dart';
 class FlutterIminD1SecondDisplay {
   //Initialize the LCD display
   Future<void> init() async {
-    return FlutterIminD1SecondDisplayPlatform.instance.init();
+    return await FlutterIminD1SecondDisplayPlatform.instance.init();
   }
 
   //Wake up the LCD display
   Future<void> wakeUp() async {
-    return FlutterIminD1SecondDisplayPlatform.instance.wakeUp();
+    return await FlutterIminD1SecondDisplayPlatform.instance.wakeUp();
   }
 
   //Hibernate the LCD display
   Future<void> sleep() async {
-    return FlutterIminD1SecondDisplayPlatform.instance.sleep();
+    return await FlutterIminD1SecondDisplayPlatform.instance.sleep();
   }
 
   //Clear the LCD display
   Future<void> clear() async {
-    return FlutterIminD1SecondDisplayPlatform.instance.clear();
+    return await FlutterIminD1SecondDisplayPlatform.instance.clear();
   }
 
   //Send the image to the LCD display
   Future<void> sendImage(Uint8List image) async {
-    return FlutterIminD1SecondDisplayPlatform.instance.sendImage(image);
+    return await FlutterIminD1SecondDisplayPlatform.instance.sendImage(image);
   }
 }
 
