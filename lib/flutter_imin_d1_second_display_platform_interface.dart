@@ -25,27 +25,23 @@ abstract class FlutterIminD1SecondDisplayPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<void> init() {
+  Future<bool?> init() {
     throw UnimplementedError('init() has not been implemented.');
   }
 
-  Future<void> wakeUp() {
+  Future<bool?> wakeUp() {
     throw UnimplementedError('wakeUp() has not been implemented.');
   }
 
-
-  Future<void> sleep() {
+  Future<bool?> sleep() {
     throw UnimplementedError('sleep() has not been implemented.');
   }
 
-
-  Future<void> clear() {
+  Future<bool?> clear() {
     throw UnimplementedError('clear() has not been implemented.');
   }
 
-
-  Future<void> sendImage(Uint8List image) {
+  Future<bool?> sendImage(Uint8List image) {
     throw UnimplementedError('sendImage() has not been implemented.');
   }
-
 }

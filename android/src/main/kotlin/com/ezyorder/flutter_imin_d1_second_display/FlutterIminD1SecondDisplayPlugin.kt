@@ -31,21 +31,49 @@ class FlutterIminD1SecondDisplayPlugin : FlutterPlugin, MethodCallHandler, Flutt
   override fun onMethodCall(call: MethodCall, result: Result) {
     when (call.method) {
       "initLCD" -> {
-        ILcdManager.getInstance(context).sendLCDCommand(1)
+        try {
+          ILcdManager.getInstance(context).sendLCDCommand(1)
+          result.success(true)
+        }catch (e: Exception){
+          result.success(false)
+        }
       }
       "wakeUpLCD" -> {
-        ILcdManager.getInstance(context).sendLCDCommand(2)
+        try {
+          ILcdManager.getInstance(context).sendLCDCommand(2)
+          result.success(true)
+        }catch (e: Exception){
+          result.success(false)
+        }
       }
       "sleepLCD" -> {
-        ILcdManager.getInstance(context).sendLCDCommand(3)
+        try {
+          ILcdManager.getInstance(context).sendLCDCommand(3)
+          result.success(true)
+        }catch (e: Exception){
+          result.success(false)
+        }
       }
       "clearLCD" -> {
-        ILcdManager.getInstance(context).sendLCDCommand(4)
+        try {
+          ILcdManager.getInstance(context).sendLCDCommand(4)
+          result.success(true)
+        }catch (e: Exception){
+          result.success(false)
+        }
       }
       "sendImageToLCD" -> {
-        val data = call.arguments as ByteArray
-        val bitmap = byteArrayToBitmap(data)
-        ILcdManager.getInstance(this).sendLCDBitmap(bitmap)
+        try {
+          val data = call.arguments as ByteArray
+          val bitmap = byteArrayToBitmap(data)
+          ILcdManager.getInstance(this).sendLCDBitmap(bitmap)
+          result.success(true)
+        }catch (e: Exception){
+          result.success(false)
+        }
+
+
+
       }
       else -> {
         result.notImplemented()

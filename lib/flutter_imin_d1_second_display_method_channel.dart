@@ -10,29 +10,27 @@ class MethodChannelFlutterIminD1SecondDisplay extends FlutterIminD1SecondDisplay
   final methodChannel = const MethodChannel('flutter_imin_d1_second_display');
 
   @override
-  Future<void> init() async {
-    await methodChannel.invokeMethod<void>('initLCD');
+  Future<bool?> init() async {
+    return await methodChannel.invokeMethod<bool>('initLCD');
   }
 
   @override
-  Future<void> wakeUp() async {
-    await methodChannel.invokeMethod<void>('wakeUpLCD');
+  Future<bool?> wakeUp() async {
+    return await methodChannel.invokeMethod<bool>('wakeUpLCD');
   }
 
   @override
-  Future<void> sleep() async {
-    await methodChannel.invokeMethod<void>('sleepLCD');
+  Future<bool?> sleep() async {
+    return await methodChannel.invokeMethod<bool>('sleepLCD');
   }
 
   @override
-  Future<void> clear() async {
-    await methodChannel.invokeMethod<void>('clearLCD');
+  Future<bool?> clear() async {
+    return await methodChannel.invokeMethod<bool>('clearLCD');
   }
 
   @override
-  Future<void> sendImage(Uint8List image) async {
-    await methodChannel.invokeMethod<Uint8List>('sendImageToLCD', image);
+  Future<bool?> sendImage(Uint8List image) async {
+    return await methodChannel.invokeMethod<bool>('sendImageToLCD', image);
   }
-
-
 }
