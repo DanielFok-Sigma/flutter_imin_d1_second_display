@@ -37,6 +37,7 @@ class WidgetsToImageController {
       assert(logicalSize.aspectRatio == imageSize.aspectRatio);
 
       final RenderView renderView = RenderView(
+        view: ui.window,
         // view: ui.window,
         // view: View.of(context),
         child: RenderPositionedBox(alignment: Alignment.center, child: repaintBoundary),
@@ -44,7 +45,7 @@ class WidgetsToImageController {
           size: logicalSize,
           devicePixelRatio: 1.0,
         ),
-        window: ui.window,
+        // window: ui.window,
       );
 
       final PipelineOwner pipelineOwner = PipelineOwner();
