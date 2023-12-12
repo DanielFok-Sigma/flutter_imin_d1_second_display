@@ -29,4 +29,9 @@ class FlutterIminD1SecondDisplay {
   Future<bool?> sendImage(Uint8List image) async {
     return FlutterIminD1SecondDisplayPlatform.instance.sendImage(image);
   }
+
+  //Get Model
+  Future<String?> getModel() async {
+    return FlutterIminD1SecondDisplayPlatform.instance.getModel();
+  }
 }

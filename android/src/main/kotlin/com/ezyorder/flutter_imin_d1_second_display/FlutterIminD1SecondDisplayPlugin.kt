@@ -2,16 +2,14 @@ package com.ezyorder.flutter_imin_d1_second_display
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.util.Base64
-import androidx.annotation.NonNull
 import com.imin.image.ILcdManager
+import com.imin.library.SystemPropManager
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
-import java.io.ByteArrayOutputStream
 
 
 /** FlutterIminD1SecondDisplayPlugin */
@@ -75,6 +73,15 @@ class FlutterIminD1SecondDisplayPlugin : FlutterPlugin, MethodCallHandler, Flutt
 
 
       }
+      "getModel" -> {
+        try {
+          val model = getModel()
+          result.success(model)
+        }catch (e: Exception){
+          result.success("")
+        }
+      }
+
       else -> {
         result.notImplemented()
       }
@@ -88,6 +95,11 @@ class FlutterIminD1SecondDisplayPlugin : FlutterPlugin, MethodCallHandler, Flutt
   private fun byteArrayToBitmap(byteArray: ByteArray): Bitmap? {
     // Use BitmapFactory to decode the ByteArray into a Bitmap
     return BitmapFactory.decodeByteArray(byteArray, 0, byteArray.size)
+  }
+
+
+  private fun getModel(): String {
+    return SystemPropManager.getModel();
   }
 
 

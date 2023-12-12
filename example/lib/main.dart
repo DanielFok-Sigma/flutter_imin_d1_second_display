@@ -17,15 +17,24 @@ class _MyAppState extends State<MyApp> {
   final String _platformVersion = 'Unknown';
   final _flutterIminD1SecondDisplayPlugin = FlutterIminD1SecondDisplay();
 
+  String deviceModel = '';
+
   @override
   void initState() {
     super.initState();
+    getDeviceModel();
   }
 
   // WidgetsToImageController to access widget
   WidgetsToImageController controller = WidgetsToImageController();
   WidgetsToImageController controller2 = WidgetsToImageController();
-
+  void getDeviceModel() async {
+    String model = await _flutterIminD1SecondDisplayPlugin.getModel() ?? '';
+    setState(() {
+      deviceModel = model;
+    });
+    debugPrint('deviceModel: $deviceModel');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +52,11 @@ class _MyAppState extends State<MyApp> {
                 const SizedBox(
                   height: 10,
                 ),
+                Text('Device Model: $deviceModel\n'),
+                const SizedBox(
+                  height: 10,
+                ),
+
                 ElevatedButton(
                   onPressed: () async {
                     await _flutterIminD1SecondDisplayPlugin.init();

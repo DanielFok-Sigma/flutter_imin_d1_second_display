@@ -50,5 +50,6 @@ android {
     dependencies {
         implementation fileTree(dir: 'libs', include: ['*.jar'])
         implementation files('libs/freeimagelibrary.jar')
+        implementation files('libs/IminLibs1.0.15.jar')
     }
 }

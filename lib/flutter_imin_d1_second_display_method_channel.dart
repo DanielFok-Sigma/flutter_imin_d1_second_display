@@ -33,4 +33,9 @@ class MethodChannelFlutterIminD1SecondDisplay extends FlutterIminD1SecondDisplay
   Future<bool?> sendImage(Uint8List image) async {
     return await methodChannel.invokeMethod<bool>('sendImageToLCD', image);
   }
+
+  @override
+  Future<String?> getModel() async {
+    return await methodChannel.invokeMethod<String>('getModel');
+  }
 }

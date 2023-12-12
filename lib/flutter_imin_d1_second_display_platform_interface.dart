@@ -44,4 +44,8 @@ abstract class FlutterIminD1SecondDisplayPlatform extends PlatformInterface {
   Future<bool?> sendImage(Uint8List image) {
     throw UnimplementedError('sendImage() has not been implemented.');
   }
+
+  Future<String?> getModel() {
+    throw UnimplementedError('getModel() has not been implemented.');
+  }
 }
